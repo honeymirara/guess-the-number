@@ -11,9 +11,9 @@
 
 // const rnd = Math.random((100) * 100);
 
-const rnd = Math.round(Math.random((100) * 100));
+const rnd = Math.round(Math.random() * 100);
 
-function search() {
+function search(rnd_) {
     let start = 0;
     let end = 100;
 
@@ -22,11 +22,11 @@ function search() {
         let middleProgram = Math.round((end + start) / 2);
 
         if (middle > start && middle < end) {
-            if (middleProgram + 10 || middleProgram - 10) {
 
+            if (middle + 10 || middle - 10) {
                 if (middle == rnd) {
                     console.log(rnd, 'Вы угадали');
-                    break;
+                    break
                 } else if (middle > rnd) {
                     end = middle;
                     console.log('Число rnd меньше, повторите попытку')
@@ -34,9 +34,10 @@ function search() {
                     start = middle
                     console.log('Число  rnd больше, повторите попытку')
                 }
+
+
             }
         }
     }
 }
-
-search();
+search(rnd);
